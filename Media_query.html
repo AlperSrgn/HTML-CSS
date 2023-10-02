@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .başlık {
+            background: black;
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            background: red;
+            color: white;
+        }
+
+        @media(max-width: 768px) {
+
+            body {
+                background: blue;
+            }
+
+            .kelime {
+                display: none;
+            }
+        }
+
+        @media(max-width: 556px) {
+            body {
+                background: black;
+
+            }
+
+            .kelime {
+                color: white;
+                display: block;
+            }
+        }
+
+        @media(max-width: 768px) {
+            .başlık {
+                background: blue;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="başlık"></div>
+
+    <div class="kelime">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum iste fugiat, veniam consectetur
+        aperiam blanditiis sit. Cupiditate vel minima magnam deleniti minus, laudantium, asperiores at accusantium
+        dolorum voluptates, natus necessitatibus.</div>
+</body>
+
+</html>
