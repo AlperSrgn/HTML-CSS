@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASD</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        /*包含以下四种的链接*/
+        a {
+            text-decoration: none;
+        }
+
+        /*正常的未被访问过的链接*/
+        a:link {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        /*已经访问过的链接*/
+        a:visited {
+            color: #fff;
+        }
+
+        .flex-center {
+            display: flex;
+            align-items: center;
+        }
+
+        .flex-center-between {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .flex-center-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .flex-center-start {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .flex_1 {
+            flex: 1;
+        }
+
+        .cursor {
+            cursor: pointer;
+        }
+
+        .govuk-crest {
+            float: right;
+            margin-top: 10px;
+            width: 100px;
+        }
+
+        .nav-tab {
+            position: fixed;
+            z-index: 99;
+            background: #ffffff;
+            top: 0;
+            width: 100%;
+            box-sizing: border-box;
+            height: 4.167vw;
+            padding: 0 18.229vw;
+        }
+
+        .nav-tab .icon {
+            width: 5.208vw;
+        }
+
+        .nav-tab .nav .item {
+            font-size: 0.833vw;
+            padding: 0 1.042vw;
+            color: #000000;
+            transform: all 0.3s;
+            font-weight: bold;
+        }
+
+        .nav-tab .nav .item.show {
+            color: #15D69C;
+        }
+
+        .banner {
+            margin-top: 4.167vw;
+            height: 41.667vw;
+            /* background: url(./img/banner.png) no-repeat;
+        background-size: 100% 100%; */
+            color: #ffffff;
+            text-align: center;
+            position: relative;
+        }
+
+        .banner .box {
+            width: 100%;
+        }
+
+        .banner .box .title {
+            font-weight: bold;
+            font-size: 4.167vw;
+        }
+
+        .banner .box .tips {
+            font-size: 1.667vw;
+            line-height: 3;
+        }
+
+        .banner .box .download {
+            margin: 0 auto;
+            margin-top: 1.563vw;
+            font-size: 0.833vw;
+            width: 9.740vw;
+            height: 2.760vw;
+            line-height: 2.760vw;
+            background: #15D69C;
+            border-radius: 1.354vw;
+        }
+
+        .banner .box .download .back {
+            margin-left: 0.521vw;
+            width: 0.833vw;
+        }
+
+        .serve.msb,
+        .about {
+            padding: 3.125vw 0;
+        }
+
+        .about .box {
+            width: 23.438vw;
+        }
+
+        .serve.msb .icon,
+        .about .icon {
+            width: 34.375vw;
+            margin-left: 4.167vw;
+        }
+
+        .about .backjump {
+            margin-left: 4.167vw;
+            width: 21vw;
+            background: #000000;
+            color: #ffffff;
+            padding: 0 40px;
+            box-sizing: border-box;
+            height: 40px;
+        }
+
+        .about .backjump a {
+            color: #ffffff;
+        }
+
+        .jump {
+            width: 21vw;
+            margin-left: 4.167vw;
+        }
+
+        .about .icon.Certificate {
+            width: 21vw;
+        }
+
+        .about .box .title {
+            font-size: 1.667vw;
+            font-weight: bold;
+            margin-bottom: 2.604vw;
+        }
+
+        .about .box .item {
+            font-size: 0.833vw;
+        }
+
+        .serve.msb .box .item {
+            width: auto;
+        }
+
+        .serve.msb .box .item .item-title {
+            margin-top: 10px;
+            align-items: flex-start;
+        }
+
+        .serve.msb .box .item .item-title .tit {
+            font-weight: bold;
+            margin-right: 10px;
+            width: 150px;
+            text-align: right;
+        }
+
+        .serve.msb .box .item .item-title .tit-detail {
+            width: 150px;
+            text-align: left;
+        }
+
+        .serve {
+            background: #E9F3F8;
+            text-align: center;
+        }
+
+        .serve .title {
+            font-weight: bold;
+            font-size: 1.667vw;
+            line-height: 3;
+        }
+
+        .serve .box .item {
+            margin: 0 auto;
+            width: 61.667vw;
+            font-size: 0.833vw;
+        }
+
+        .serve .box .float {
+            margin-top: 5.208vw;
+            padding-bottom: 3.125vw;
+        }
+
+        .serve .box .float .box-item {
+            margin: 0 1.302vw;
+            box-sizing: border-box;
+            width: 18.750vw;
+            background: #FFFFFF;
+            padding: 0 1.823vw;
+            padding-bottom: 0.781vw;
+            border-bottom: 0.208vw solid #212121;
+        }
+
+        .serve .box .float .box-item .icon {
+            max-width: 10.417vw;
+            max-height: 8.333vw;
+            width: 100%;
+            height: 100%;
+        }
+
+        .serve .box .float .box-item .box-item-title {
+            font-size: 1.354vw;
+            line-height: 2;
+        }
+
+        .serve .box .float .box-item .text {
+            color: #666666;
+            font-size: 0.729vw;
+            height: 5vw;
+        }
+
+        .safety {
+            text-align: center;
+            padding-bottom: 4.167vw;
+        }
+
+        .safety .title {
+            font-weight: bold;
+            font-size: 1.667vw;
+            line-height: 3;
+        }
+
+        .safety .box .item {
+            margin: 0 auto;
+            width: 61.667vw;
+            font-size: 0.833vw;
+        }
+
+        .safety .box .float {
+            margin: 0 auto;
+            margin-top: 4.688vw;
+            width: 62.500vw;
+        }
+
+        .safety .box .float .box-item {
+            background: #15D69C;
+            width: 18.750vw;
+            overflow: hidden;
+            border-radius: 0.521vw;
+            color: #ffffff;
+        }
+
+        .safety .box .float .box-item .box-item-title {
+            padding: 10px 0;
+            font-size: 1.042vw;
+            font-weight: bold;
+        }
+
+        .safety .box .float .box-item .box-item-text {
+            font-size: 0.833vw;
+            text-align: center;
+            height: 7.5vw;
+            margin: 0 0.885vw;
+        }
+
+        .info {
+            height: 36.458vw;
+            background-color: #E9F3F8;
+            background-image: url(./img/bg.png);
+            background-size: 48.438vw 25.000vw;
+            background-repeat: no-repeat;
+            background-origin: unset;
+            background-position: right;
+        }
+
+        .info .item {
+            width: 70%;
+        }
+
+        .about .box .item .bold {
+            font-weight: bold;
+        }
+
+        .info .item .title {
+            font-size: 2.604vw;
+            font-weight: bold;
+        }
+
+        .info .item .box {
+            margin-top: 4.167vw;
+            font-size: 0.833vw;
+        }
+
+        .tabbar {
+            color: #ffffff;
+            height: 11.979vw;
+            background: linear-gradient(90deg, #2CDD9B 0%, #1DC8CB 99%);
+        }
+
+        .form {
+            color: #656565;
+            font-size: 0.729vw;
+            text-align: center;
+            height: 2.240vw;
+            line-height: 2.240vw;
+            background: #000000;
+        }
+
+        .tabbar .box-tabbar {
+            margin: 0 auto;
+            width: 62.500vw;
+        }
+
+        .tabbar .box-tabbar .item.tel {
+            font-size: 1.354vw;
+        }
+
+        .tabbar .box-tabbar .item .box p {
+            font-size: 1.354vw;
+        }
+
+        .tabbar .box-tabbar .item .box .icon {
+            margin-right: 0.625vw;
+            width: 1.354vw;
+        }
+
+        .tabbar .box-tabbar .item .int-icon {
+            width: 1.563vw;
+            margin-top: 0.781vw;
+            margin-right: 2.083vw;
+        }
+
+        .display {
+            opacity: 0;
+            transform: translateY(53.333vw);
+            transition: all 1s ease 0s;
+        }
+
+        .display.display1 {
+            transition-duration: 1s
+        }
+
+        .display.display2 {
+            transition-duration: 1.2s
+        }
+
+        .display.display3 {
+            transition-duration: 1.4s
+        }
+
+        .display.display4 {
+            transition-duration: 1.2s
+        }
+
+        .display.display5 {
+            transition-duration: 1.4s
+        }
+
+        .display.display6 {
+            transition-duration: 1.6s
+        }
+
+        .display.display7 {
+            transition-duration: 1.8s
+        }
+
+        .display.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes qfe_qfy_shakeUp {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            10%,
+            30%,
+            50%,
+            70%,
+            90% {
+                transform: translateY(-2.667vw);
+            }
+
+            20%,
+            40%,
+            60%,
+            80% {
+                transform: translateY(2.667vw);
+            }
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        #particles-js {
+            width: 100%;
+            height: 100%;
+            background-color: #0b0c22;
+            background-image: url('');
+            background-size: cover;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+        }
+    </style>
+
+</head>
+
+
+
+<body>
+
+
+    <div class="nav-tab flex-center-between">
+        <img class="icon" src="./img/logo.png" alt="">
+        <div class="nav flex-center-between cursor">
+            <div class="nav-item item show" onclick="jump(1)">BBC Home</div>
+            <div class="nav-item item" onclick="jump(2)">About US</div>
+            <div class="nav-item item" onclick="jump(3)">Our Service</div>
+            <div class="nav-item item" onclick="jump(4)">Contact US</div>
+        </div>
+    </div>
+    <!-- particles.js container -->
+    <div class="banner flex-center-between">
+        <div id="particles-js"></div>
+        <div class="box">
+            <div class="title display display1">Bring in assets and currency stability</div>
+            <div class="tips display display2">Bring in assets and currency stability</div>
+
+        </div>
+        <div></div>
+    </div>
+    <!-- <div class="banner flex-center-between">
+        <div class="box">
+            <div class="title display display1">Bring in assets and currency stability</div>
+            <div class="tips display display2">Bring in assets and currency stability</div>
+            <div class="download flex-center-center display display3" onclick="location.href='https://download.bbctokens.cc'">
+                <div>Download APP</div>
+                <img class="back" src="./img/back.png" alt="">
+            </div>
+        </div>
+        <div></div>
+    </div> -->
+    <div class="about flex-center-center">
+        <div class="box">
+            <div class="title  display display1">BOBOLE TECHNOLOGY COMPANY LIMITED</div>
+            <div class="item display display2">
+                <div>Company number 13848191 Registered office address</div>
+                <div class="bold">2-8 Scrutton Street, London, England, EC2A 4RT</div>
+
+                <div style="margin-top: 10px;">Company status</div>
+                <div class="bold">Active</div>
+
+                <div style="margin-top: 10px;">Company type</div>
+                <div class="bold">Private limited Company</div>
+
+                <div style="margin-top: 10px;">Incorporated on</div>
+                <div class="bold">14 January 2022</div>
+
+                <div style="margin-top: 10px;">Accounts</div>
+                <div class="bold">First accounts made up to 31 January 2023 due by 14 Oc</div>
+
+                <div style="margin-top: 10px;">Confirmation statement</div>
+                <div class="bold">First statement date 13 January 2023 due</div>
+
+                <div style="margin-top: 10px;">Nature of business (SIC)</div>
+                <div class="bold">64999 - Financial intermediation not elsewhere classified</div>
+            </div>
+            <img class="govuk-crest" src="./img/govuk-crest.png" alt="">
+        </div>
+        <div class="flex-center" style="flex-direction: column;">
+            <img class="icon Certificate" src="./img/Certificate.png" alt="">
+            <div class="backjump flex-center-between">
+                <p>Click to query</p>
+                <a class="jumpa flex-center"
+                    href="https://find-and-update.company-information.service.gov.uk/company/13848191">
+                    <svg contenteditable="svgback" aria-hidden="true" focusable="false"
+                        class="govuk-header__logotype-crown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132 97"
+                        height="30" width="36">
+                        <path fill="currentColor" fill-rule="evenodd"
+                            d="M25 30.2c3.5 1.5 7.7-.2 9.1-3.7 1.5-3.6-.2-7.8-3.9-9.2-3.6-1.4-7.6.3-9.1 3.9-1.4 3.5.3 7.5 3.9 9zM9 39.5c3.6 1.5 7.8-.2 9.2-3.7 1.5-3.6-.2-7.8-3.9-9.1-3.6-1.5-7.6.2-9.1 3.8-1.4 3.5.3 7.5 3.8 9zM4.4 57.2c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.5-1.5-7.6.3-9.1 3.8-1.4 3.5.3 7.6 3.9 9.1zm38.3-21.4c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.6-1.5-7.6.3-9.1 3.8-1.3 3.6.4 7.7 3.9 9.1zm64.4-5.6c-3.6 1.5-7.8-.2-9.1-3.7-1.5-3.6.2-7.8 3.8-9.2 3.6-1.4 7.7.3 9.2 3.9 1.3 3.5-.4 7.5-3.9 9zm15.9 9.3c-3.6 1.5-7.7-.2-9.1-3.7-1.5-3.6.2-7.8 3.7-9.1 3.6-1.5 7.7.2 9.2 3.8 1.5 3.5-.3 7.5-3.8 9zm4.7 17.7c-3.6 1.5-7.8-.2-9.2-3.8-1.5-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.3 3.5-.4 7.6-3.9 9.1zM89.3 35.8c-3.6 1.5-7.8-.2-9.2-3.8-1.4-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.4 3.6-.3 7.7-3.9 9.1zM69.7 17.7l8.9 4.7V9.3l-8.9 2.8c-.2-.3-.5-.6-.9-.9L72.4 0H59.6l3.5 11.2c-.3.3-.6.5-.9.9l-8.8-2.8v13.1l8.8-4.7c.3.3.6.7.9.9l-5 15.4v.1c-.2.8-.4 1.6-.4 2.4 0 4.1 3.1 7.5 7 8.1h.2c.3 0 .7.1 1 .1.4 0 .7 0 1-.1h.2c4-.6 7.1-4.1 7.1-8.1 0-.8-.1-1.7-.4-2.4V34l-5.1-15.4c.4-.2.7-.6 1-.9zM66 92.8c16.9 0 32.8 1.1 47.1 3.2 4-16.9 8.9-26.7 14-33.5l-9.6-3.4c1 4.9 1.1 7.2 0 10.2-1.5-1.4-3-4.3-4.2-8.7L108.6 76c2.8-2 5-3.2 7.5-3.3-4.4 9.4-10 11.9-13.6 11.2-4.3-.8-6.3-4.6-5.6-7.9 1-4.7 5.7-5.9 8-.5 4.3-8.7-3-11.4-7.6-8.8 7.1-7.2 7.9-13.5 2.1-21.1-8 6.1-8.1 12.3-4.5 20.8-4.7-5.4-12.1-2.5-9.5 6.2 3.4-5.2 7.9-2 7.2 3.1-.6 4.3-6.4 7.8-13.5 7.2-10.3-.9-10.9-8-11.2-13.8 2.5-.5 7.1 1.8 11 7.3L80.2 60c-4.1 4.4-8 5.3-12.3 5.4 1.4-4.4 8-11.6 8-11.6H55.5s6.4 7.2 7.9 11.6c-4.2-.1-8-1-12.3-5.4l1.4 16.4c3.9-5.5 8.5-7.7 10.9-7.3-.3 5.8-.9 12.8-11.1 13.8-7.2.6-12.9-2.9-13.5-7.2-.7-5 3.8-8.3 7.1-3.1 2.7-8.7-4.6-11.6-9.4-6.2 3.7-8.5 3.6-14.7-4.6-20.8-5.8 7.6-5 13.9 2.2 21.1-4.7-2.6-11.9.1-7.7 8.8 2.3-5.5 7.1-4.2 8.1.5.7 3.3-1.3 7.1-5.7 7.9-3.5.7-9-1.8-13.5-11.2 2.5.1 4.7 1.3 7.5 3.3l-4.7-15.4c-1.2 4.4-2.7 7.2-4.3 8.7-1.1-3-.9-5.3 0-10.2l-9.5 3.4c5 6.9 9.9 16.7 14 33.5 14.8-2.1 30.8-3.2 47.7-3.2z">
+                        </path>
+                        <image src="/assets/images/govuk-logotype-crown.png" xlink:href="data:," display="none"
+                            class="govuk-header__logotype-crown-fallback-image" width="36" height="32"></image>
+                    </svg>
+                    <span style="margin-left: 10px;">GOV.UK</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="serve msb">
+        <!-- <div class="title display display1">MSB details</div> -->
+        <div class="flex-center-center">
+            <div class="box">
+                <div class="title display display1">MSB details</div>
+                <div class="item display display2">
+                    <div class="item-title flex-center-center">
+                        <div class="tit">Registration status of MSB:</div>
+                        <div class="tit-detail">Registered</div>
+                    </div>
+                    <div class="item-title flex-center-center">
+                        <div class="tit">Legal names of MSB:</div>
+                        <div class="tit-detail">BOBOLE TECHNOLOGY COMPANY LIMITED</div>
+                    </div>
+                    <div class="item-title flex-center-center">
+                        <div class="tit">MSB registration number:</div>
+                        <div class="tit-detail">M22985196</div>
+                    </div>
+                    <div class="item-title flex-center-center">
+                        <div class="tit">Initial date of registration:</div>
+                        <div class="tit-detail">2022-01-21</div>
+                    </div>
+                    <div class="item-title flex-center-center">
+                        <div class="tit">Expiry date of registration:</div>
+                        <div class="tit-detail">2025-01-31</div>
+                    </div>
+                    <div class="item-title flex-center-center">
+                        <div class="tit">Main office or location of MSB:</div>
+                        <div class="tit-detail">8100 LESLIE STREET, SUITE 12 MARKHAM, ON, CANADA L3T7M8</div>
+                    </div>
+                    <div class="item-title flex-center-center">
+                        <div class="tit">Telephone number:</div>
+                        <div class="tit-detail">(534) 375-2207</div>
+                    </div>
+                    <div class="item-title flex-center-center">
+                        <div class="tit">Incorporation number:</div>
+                        <div class="tit-detail">13848191</div>
+                    </div>
+                    <div class="item-title flex-center-center">
+                        <div class="tit">Date of incorporation:</div>
+                        <div class="tit-detail">2022-01-14</div>
+                    </div>
+                    <div class="item-title flex-center-center">
+                        <div class="tit">urisdiction of incorporation:</div>
+                        <div class="tit-detail">Outside of Canada:</div>
+                    </div>
+                    <div class="item-title flex-center-center">
+                        <div class="tit">MSB activities:</div>
+                        <div class="tit-detail">Foreign exchange dealing Money transferring Dealing in virtual
+                            currencies</div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-center" style="flex-direction: column;">
+                <img class="icon" src="./img/details.png" alt="">
+                <img class="jump" src="./img/jump1.png" alt="" style="width: 34.375vw;"
+                    onclick="location.href='https://www10.fintrac-canafe.gc.ca/msb-esm/public/detailed-information/msb-details/7b226d73624f72674e756d626572223a3136363835372c227072696d617279536561726368223a7b226f72674e616d65223a22626f626f6c65222c2273656172636854797065223a337d7d/'">
+            </div>
+        </div>
+    </div>
+
+    <div class="about flex-center-center">
+        <div class="box">
+            <div class="title  display display1">About us</div>
+            <div class="item display display2">
+                BBC The mission is to provide our users with the ultimate cryptocurrency trading experience.
+                BBC Committed to achieving this goal by providing our users with the most advanced trading tools,
+                innovative technologies and unparalleled customer service levels.
+
+                <br />
+                <br />
+                The field of digital assets is developing at an extremely fast rate. In order to keep up with such rapid
+                technological innovation, a method that is equally forward-looking and agile is needed. BBC provides our
+                users and global liquidity providers with the most advanced digital asset trading services.
+
+            </div>
+        </div>
+        <img class="icon" src="./img/box1.png" alt="">
+    </div>
+
+    <div class="serve">
+        <div class="title display display1">Our Service</div>
+        <div class="box">
+            <div class="item display display2">
+                BBC The team has gained valuable experience in blockchain technology, and the platform has consolidated
+                its position as the preferred venue for digital asset traders and institutional transactions.<br />
+                The strategic focus of the company is to provide professional traders and liquidity providers around the
+                world with the best crypto trading experience by providing cutting-edge technology.
+            </div>
+            <div class="float flex-center-center">
+                <div class="box-item  display display1">
+                    <img class="icon" src="./img/box-item1.png" alt="">
+                    <div class="box-item-title">Simple</div>
+                    <div class="text">Simple operation, you can see it at a glance</div>
+                </div>
+                <div class="box-item display display2">
+                    <img class="icon" src="./img/box-item2.png" alt="">
+                    <div class="box-item-title">Stability</div>
+                    <div class="text">Provide the best crypto trading experience for professional traders and liquidity
+                        providers all over the world by providing cutting-edge technology.</div>
+                </div>
+                <div class="box-item display display3">
+                    <img class="icon" src="./img/box-item3.png" alt="">
+                    <div class="box-item-title">Safety</div>
+                    <div class="text">The first exchange to invest millions of dollars in security and legal funds to
+                        add extra protection to your assets</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="safety">
+        <div class="title display display1">Full protection of security and legal funds</div>
+        <div class="box">
+            <div class="item display display2">
+                The method by which the BBC protects your funds centralization and decentralization. It is also the
+                first exchange to invest millions of dollars in security and legal funds to add extra protection to your
+                assets.
+            </div>
+            <div class="float flex-center-between">
+                <div class="box-item display display1">
+                    <img src="./img/float_box_icon1.png" alt="">
+                    <div class="box-item-title">Efficient trading and instant deposit/withdrawal</div>
+                    <div class="box-item-text flex-center-center">
+                        As a mature exchange with cutting-edge technology, BBC provides an efficient and convenient
+                        trading system and instant deposit and withdrawal services.
+                    </div>
+                </div>
+                <div class="box-item display display2">
+                    <img src="./img/float_box_icon2.png" alt="">
+                    <div class="box-item-title">Stable and reliable since 2017</div>
+                    <div class="box-item-text flex-center-center">
+                        For 4 years, the BBC has been operating stably and reliably. As we continue to explore
+                        innovative technologies, we strive to provide you with the best trading experience.
+                    </div>
+                </div>
+                <div class="box-item display display3">
+                    <img src="./img/float_box_icon3.png" alt="">
+                    <div class="box-item-title">An exchange that meets your expectations</div>
+                    <div class="box-item-text flex-center-center">
+                        As one of the earliest and largest cryptocurrency exchanges, the BBC has always strictly
+                        complied with regulations and will never allow market manipulation. We have always been
+                        committed to openness, transparency and cooperation.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="info flex-center-center">
+        <div class="item">
+            <div class="title display display1">Guaranteed service</div>
+            <div class="title display display2">Peace of mind for family</div>
+            <div class="box display display3">
+                We are always looking for like-minded people who are as passionate about blockchain and cryptocurrency
+                technology as we are.
+                <br />
+                If you are as excited about digital asset trading as we are, please join us!
+                <br />
+                <br />
+                Enter a market that never closes. Expand your product to top crypto assets with partners who ensure
+                clear regulation.
+            </div>
+        </div>
+    </div>
+
+    <div class="tabbar flex-center">
+        <div class="box-tabbar flex-center-between">
+            <div class="tel item">
+                <div class="box flex-center">
+                    <img class="icon" src="./img/phone.png" alt="">
+                    <p>Contact us:</p>
+                </div>
+                <div style="margin-top: 15px;">boboletechnology@gmail.com</div>
+            </div>
+            <div class="int item">
+                <div class="box flex-center">
+                    <img class="icon" src="./img/community.png" alt="">
+                    <p>Community:</p>
+                </div>
+                <div class="flex-center">
+                    <img class="int-icon" src="./img/nav1.png" alt="">
+                    <img class="int-icon" src="./img/nav2.png" alt="">
+                    <img class="int-icon" src="./img/nav3.png" alt="">
+                    <img class="int-icon" src="./img/nav4.png" alt="">
+                    <img class="int-icon" src="./img/nav5.png" alt="">
+                    <img class="int-icon" src="./img/nav6.png" alt="">
+                    <img class="int-icon" src="./img/nav7.png" alt="">
+                    <img class="int-icon" src="./img/nav8.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form">
+        BBC@2021
+    </div>
+
+
+
+
+</body>
+<script>
+
+
+    var home_height = 0
+    var about_height = 0
+    var serve_height = 0
+    var safety_height = 0
+    var head_height = document.getElementsByClassName('nav-tab')[0].offsetHeight
+    var lock = true
+    window.onload = () => {
+        var offsetWidth = document.getElementsByTagName('body')[0].offsetWidth
+        console.log(document.getElementsByTagName('body'))
+        if (offsetWidth <= 1024) {
+            console.log(offsetWidth)
+            window.location.replace("../index.html")
+        }
+        show_item()
+        home_height = document.getElementsByClassName('banner')[0].offsetTop
+        about_height = document.getElementsByClassName('about')[0].offsetTop
+        serve_height = document.getElementsByClassName('serve')[0].offsetTop
+        safety_height = document.getElementsByClassName('safety')[0].offsetTop
+        window.addEventListener("scroll", () => {
+            show_item()
+            navItem()
+        })
+    }
+    var num = 0
+    const rollTo = (distance = 0, time) => {
+        if (!time) {
+            scrollTo(0, distance);
+            return distance;
+        }
+        const spacingTime = 20; // 设置循环的间隔时间  值越小消耗性能越高
+        let index = time / spacingTime; // 计算循环的次数
+        let now = document.body.scrollTop + document.documentElement.scrollTop; // 获取当前滚动条位置
+        let rollDistance = (distance - now) / index; // 计算每次滑动的距离
+        let rollTimer = setInterval(() => {
+            if (index > 0) {
+                index--;
+                rollTo(now += rollDistance);
+            } else {
+                clearInterval(rollTimer); // 清除计时器
+            }
+        }, spacingTime);
+    };
+
+    function show_item() {
+        var height = window.pageYOffset;
+        var work_height = document.documentElement.clientHeight
+        var item = document.getElementsByClassName('display')
+        if (num == item.length) return
+        for (var i = 0; i < item.length; i++) {
+            let offsetTop = item[i].offsetTop
+            if (offsetTop < work_height + height && num <= i) {
+                console.log(i, 'in work')
+                item[i].classList.add('show')
+                num++
+            }
+        }
+    }
+    const jump = (e) => {
+        if (e == 1) {
+            rollTo(0, 200)
+        } else if (e == 2) {
+            rollTo(about_height - head_height, 200)
+        } else if (e == 3) {
+            rollTo(serve_height - head_height, 200)
+        } else if (e == 4) {
+            rollTo(safety_height - head_height, 200)
+        }
+    }
+    const navItem = () => {
+        var height = window.pageYOffset;
+        if (lock) {
+            lock = false
+            return
+        }
+        if (height == 0) {
+            document.getElementsByClassName('nav-item')[0].classList.remove('show')
+            document.getElementsByClassName('nav-item')[1].classList.remove('show')
+            document.getElementsByClassName('nav-item')[2].classList.remove('show')
+            document.getElementsByClassName('nav-item')[3].classList.remove('show')
+            document.getElementsByClassName('nav-item')[0].classList.add('show')
+        }
+        if (height > about_height - head_height - 5) {
+            document.getElementsByClassName('nav-item')[0].classList.remove('show')
+            document.getElementsByClassName('nav-item')[1].classList.remove('show')
+            document.getElementsByClassName('nav-item')[2].classList.remove('show')
+            document.getElementsByClassName('nav-item')[3].classList.remove('show')
+            document.getElementsByClassName('nav-item')[1].classList.add('show')
+        }
+        if (height > serve_height - head_height - 5) {
+            document.getElementsByClassName('nav-item')[0].classList.remove('show')
+            document.getElementsByClassName('nav-item')[1].classList.remove('show')
+            document.getElementsByClassName('nav-item')[2].classList.remove('show')
+            document.getElementsByClassName('nav-item')[3].classList.remove('show')
+            document.getElementsByClassName('nav-item')[2].classList.add('show')
+        }
+        if (height > safety_height - head_height - 5) {
+            document.getElementsByClassName('nav-item')[0].classList.remove('show')
+            document.getElementsByClassName('nav-item')[1].classList.remove('show')
+            document.getElementsByClassName('nav-item')[2].classList.remove('show')
+            document.getElementsByClassName('nav-item')[3].classList.remove('show')
+            document.getElementsByClassName('nav-item')[3].classList.add('show')
+        }
+    }
+
+
+
+</script>
+<script src="particle.js"></script>
+<script src="app.js"></script>
+
+</html>

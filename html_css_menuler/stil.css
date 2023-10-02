@@ -1,0 +1,188 @@
+.menu1{
+    width: 130px;
+    height: 160px;
+    margin: 10px 0 0 0;
+}
+.menu1 ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu1 a{
+    display: block;
+    width: 125px;
+    height: 24px;
+    background: #fcc;
+    color: #930;
+    font: bold 12px tahoma;
+    text-decoration: none;
+    padding: 8px 0 0 5px;
+}
+.menu1 a:hover{
+    background: #930;
+    color: white;
+}
+
+.menu2{
+    width: 600px;
+    height: 32px;
+    margin: 30px 0 0 0;
+}
+.menu2 ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.menu2 li{
+    float: left;
+   
+}
+.menu2 a{
+    display: block;
+    width: 120px;
+    height: 24px;
+    background: lightblue;
+    color: black;
+    font: bold 12px tahoma;
+    text-decoration: none;
+    padding: 8px 0 0 0;
+    text-align: center;
+}
+.menu2 a:hover{
+    background: white;
+    color: black;
+}
+
+.menu3{
+    width: 510px;
+    height: 32px;
+    margin: 30px 0 0 0;
+}
+
+.menu3 ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.menu3 li{
+    float: left;
+}
+.menu3 a{
+    text-decoration: none;
+    background: lightgray;
+    color: black;
+    font: bold 12px tahoma;
+    text-align: center;
+    padding: 9px 25px;
+}
+.menu3 a:hover{
+    background: black;
+    color: white;
+}
+
+.menu4{
+    width: 150px;
+    height: 170px;
+    margin: 30px 0 0 0;
+}
+.menu4 ul li{
+    position: relative;
+}
+.menu4 ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.menu4 a{
+    display: block;
+    width: 150px;
+    border: 1px solid black;
+    text-decoration: none;
+    background: darkslateblue;
+    color: white;
+    font: bold 12px tahoma;
+    padding: 9px 5px;
+}
+.menu4 a:hover{
+    background: white;
+    color: darkslateblue;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.menu4 ul li ul{
+    display: none;
+    position: absolute; left: 162px; top: 0;
+}
+.menu4 ul li:hover ul{
+display: block;
+}
+
+.menu5{
+    width: 610px;
+    height: 150px;
+    margin: 50px 0 0 0;
+}
+.menu5 ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.menu5 ul li{
+    float: left;
+    position: relative;
+}
+.menu5 ul li a{
+    display: block;
+    width: 120px;
+    background: rgb(177, 128, 223);
+    padding: 9px 0;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(88, 9, 82);
+    font: bold 15px arial;
+}
+.menu5 ul li a:hover{
+background: cyan;
+color: black;
+}
+
+.menu5 ul li ul{
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 34px;
+}
+.menu5 ul li:hover ul{
+    display: block;
+}
+
+
+.menu6{
+    width: 750px;
+    height: 30px;
+    margin: 30px 0 0 0;
+    border-bottom: 1px solid black;
+}
+.menu6 ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.menu6 ul li{
+    float: left;  
+}
+.menu6 ul li a{
+    display: block;
+    width: 170px;
+    height: 30px;
+    text-decoration: none;
+    color: black;
+    font: bold 12px tahoma;
+    background: url(https://fatihhayrioglu.com/images/sekme_sag_resim.gif);
+    background-size: 100px 200px;
+    line-height: 25px;
+}
+.menu6 ul li a:hover{
+    color: #930;
+}

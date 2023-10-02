@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background-color: rgb(29, 96, 154);
+}
+.container{
+    max-width: 1100px;
+    margin: 0 auto;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.75rem;
+    height: 70px;
+    color: azure;
+}
+
+h1{
+    align-items: center;
+    
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    align-items: center;  
+    
+}
+
+nav ul li a{
+    padding: 0.5rem;
+    color: azure;
+    text-decoration: none;
+}
+
+nav ul li a:hover{
+    display: block;
+    background-color: azure;
+    color: rgb(29, 96, 154);
+    border-radius: 10px;
+}
+
